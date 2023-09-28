@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Spotify</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="brand"><img src="logo.png" alt="spotify">Spotify</li>
+            <li><a href="index.html" id="sss">Home</a></li>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="true">
+                    Other Artist
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="index.html">Sidhu Moosewala</a></li>
+                    <li><a class="dropdown-item" href="index-3.html">Diljit Dosanjh</a></li>
+                    <li><a class="dropdown-item" href="index-4.html">Shubh</a></li>
+                </ul>
+            </div>
+            <!-- <li><a href="index-2.html">More</a></li> -->
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="song">
+            <h1>Top 8 Shubdeet singh songs</h1>
+        </div>
+        <div class="songItemContainer">
+            <div class="songItem">
+                <img src="cxx.jfif" alt="10">
+                <span class="songname2">Elevated<span> 03:50 <i id="26" id="pausedddd"
+                            class="songplay fa-regular fa-circle-play fa-xl"></i></span></span>
+            </div><br>
+            <div class="songItem">
+                <img src="cx.jfif" alt="10">
+                <span class="songname2">Offshore<span> 03:50 <i id="27"
+                            class=" songplay fa-regular fa-circle-play fa-xl"></i></span></span>
+            </div><br>
+            <div class="songItem">
+                <img src="xc.jfif" alt="10">
+                <span class="songname2">No love<span> 03:50 <i id="28"
+                            class="songplay fa-regular fa-circle-play fa-xl"></i></span></span>
+            </div><br>
+            <div class="songItem">
+                <img src="scs.jfif" alt="10">
+                <span class="songname2">Dior<span> 03:50 <i id="29"
+                            class="songplay fa-regular fa-circle-play fa-xl"></i></span></span>
+            </div><br>
+            <div class="songItem">
+                <img src="sc.jfif" alt="10">
+                <span class="songname2">Baller<span> 03:50 <i id="30"
+                            class="songplay fa-regular fa-circle-play fa-xl"></i></span></span>
+            </div><br>
+            <div class="songItem">
+                <img src="xv x.jfif" alt="10">
+                <span class="songname2">We Rollin<span> 03:50 <i id="31"
+                            class="songplay fa-regular fa-circle-play fa-xl"></i></span></span>
+            </div><br>
+            <div class="songItem">
+                <img src="ws.jfif" alt="10">
+                <span class="songname2">Still Rollin <span> 03:50 <i id="32"
+                            class="songplay fa-regular fa-circle-play fa-xl"></i></span></span>
+            </div><br>
+            <div class="songItem">
+                <img src="ww.jfif" alt="10">
+                <span class="songname2">Cheques<span> 03:50 <i id="33"
+                            class="songplay fa-regular fa-circle-play fa-xl"></i></span></span>
+            </div><br>
+        </div>
+        <div class="banner"></div>
+    </div>
+    <div class="bottom">
+        <input type="range" name="proressbar" id="progressbar" value="0">
+        <div class="icon">
+            <!-- fontawesome icons -->
+            <i class="fas fa-3x fa-step-backward" id="previous"></i>
+            <i class="far fa-3x fa-circle-play" id="masterplay"></i>
+            <i class="fas fa-3x fa-step-forward" id="next"></i>
+        </div>
+        <div class="imageinfo">
+            <img src="playing.gif" width="44PX" id="gif">
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/b6b2d9aff5.js" crossorigin="anonymous"></script>
+    <script>
+        let songIndex2 = 10;
+        let audio = new Audio('32.mp3');
+        let masterplay = document.getElementById('masterplay');
+        let proressbar = document.getElementById('progressbar');
+        let gif = document.getElementById('gif')
+        // let songitem = Array.from(document.getElementsByClassName('songItem'));
+        let songs2 = [
+            { songname2: "Adhiya", filepath: "Adhiya.mp3", coverpath: "songs/2.jpg" },
+            { songname2: "Approach", filepath: "Approach.mp3", coverpath: "songs/2.jpg" },
+            { songname2: "Chitta", filepath: "song/Chitta.mp3", coverpath: "songs/3.jpg" },
+            { songname2: "Dont", filepath: "songsDont.mp3", coverpath: "songs/4.jpg" },
+            { songname2: "Dont worry", filepath: "songsDontt.mp3", coverpath: "songs/5.jpg" },
+            { songname2: "Let", filepath: "song/let.mp3", coverpath: "songs/6.jpg" },
+            { songname2: "sikander", filepath: "songssikander.mp3", coverpath: "songs/7.jpg" },
+            { songname2: "WYTB", filepath: "song/WYTB.mp3", coverpath: "songs/8.jpg" },
+        ]
+        // songitem.forEach((element , i) => {
+        //     console.log(element , i)
+        //     element.getElementsByTagName('img')[0].src=xx[i].coverpath;
+        //     element.getElementsByClassName('songname2')[0].innertext =songs[i].songname2
+        // })
+
+        masterplay.addEventListener('click', () => {
+            if (audio.paused || audio.currentTime <= 0) {
+                audio.play()
+                masterplay.classList.replace('fa-circle-play', 'fa-circle-pause')
+                gif.style.opacity = 1
+            }
+
+            else {
+                audio.pause()
+                masterplay.classList.replace('fa-circle-pause', 'fa-circle-play')
+                gif.style.opacity = 0
+            }
+        })
+
+        audio.addEventListener('timeupdate', () => {
+            progress = parseInt((audio.currentTime / audio.duration) * 100)
+            // console.log(progress)
+            proressbar.value = progress
+        })
+        proressbar.addEventListener('change', () => {
+            audio.currentTime = proressbar.value * audio.duration / 100
+        })
+        const makeAllPlays = (() => {
+            Array.from(document.getElementsByClassName('songItem')).forEach((element) => {
+                element.classList.replace('fa-circle-play', 'fa-circle-pause')
+            })
+        })
+
+        Array.from(document.getElementsByClassName('songplay')).forEach((element) => {
+            element.addEventListener('click', (e) => {
+                makeAllPlays()
+                songIndex2 = parseInt(e.target.id)
+                e.target.classList.replace('fa-circle-play', 'fa-circle-pause');
+                audio.src = `${songIndex2 + 1}.mp3`
+                audio.currentTime = 0;
+                audio.play();
+                masterplay.classList.replace('fa-circle-play', 'fa-circle-pause')
+
+            })
+        })
+        document.getElementById('next').addEventListener('click', () => {
+            if (songIndex2 >= 7) {
+                songIndex2 = 0
+            }
+            else {
+                songIndex2 += 1
+                audio.src = `${songIndex2 + 1}.mp3`
+                audio.currentTime = 0;
+                audio.play();
+                masterplay.classList.replace('fa-circle-play', 'fa-circle-pause')
+            }
+        })
+        document.getElementById('previous').addEventListener('click', () => {
+            if (songIndex2 <= 1) {
+                songIndex2 = 0
+            }
+            else {
+                songIndex2 -= 1
+                audio.src = `${songIndex2 + 1}.mp3`
+                audio.currentTime = 0;
+                audio.play();
+                masterplay.classList.replace('fa-circle-play', 'fa-circle-pause')
+            }
+        })
+
+        console.log("helooooooooooo")
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+     crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: red;
+}
+
+nav {
+    background-color: rgb(49, 31, 31);
+    color: white;
+    height: 11vh;
+    border: 2px solid black;
+    top:0;
+    position:sticky;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    padding: 0 22px;
+    list-style: none;
+}
+
+.brand {
+    display: flex;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    align-items: center;
+    /* padding: 0 8px; */
+}
+#sss{
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 50px;
+    display: flex;
+    font-weight: bolder;
+    padding: 0 6px;
+    align-items: center;
+}
+
+.container {
+    min-height: 10vh;
+    width: 20vw;
+    /* background-color: black; */
+    color: black;
+    margin: 22px 0;
+    padding: 1%;
+    display: flex;
+    border-radius: 9px;
+    background-image: url("Snapinsta.app_318668764_221750630204820_1622604671206260338_n_1080.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bottom {
+    background-color: black;
+    color: white;
+    height: 18vh;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+}
+
+.icon {
+    margin-top: 14px;
+    /* padding: 33px; */
+}
+
+#progressbar {
+    width: 80vw;
+}
+
+.songItem {
+    display: flex;
+    cursor: pointer;
+    height: 50px;
+    background-color: white;
+    color: black;
+    margin: 33px;
+    width: auto;
+    border-radius: 23px;
+    justify-content: center;
+    margin: auto;
+    padding: 13px;
+    align-items: center;
+     transition: background-color 0.5s; 
+     
+}
+
+.songItem:hover {
+    background-color: rgb(135, 109, 201);
+}
+
+.songItem img {
+    width: 55px;
+    /* border-radius: 15px; */
+    padding-right: 4px;
+}
+
+.songItemContainer {
+
+    margin: 97px -35%;
+}
+
+.imageinfo {
+    position: absolute;
+    left: 10vw;
+}
+
+.imageinfo img {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        background-color: black;
+        color: white;
+        height: 9vh;
+        position:sticky;
+    }
+
+    nav ul li {
+        padding: 5px 10px;
+        list-style: none;
+    }
+
+    .songItemContainer {
+        margin-top: 33px;
+        margin: 77px -80%;
+    }
+
+    .songItem {
+        display: flex;
+        height: 50px;
+        background-color: white;
+        color: black;
+        width: 69vw;
+        justify-content: center;
+        /* margin:auto; */
+        padding: 3px 3px;
+        border-radius: 23px;
+        align-items: center;
+    }
+
+    .songItem img {
+        width: 22px;
+        /* padding-right: 8px; */
+    }
+}
